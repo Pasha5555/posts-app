@@ -1,0 +1,4 @@
+export const FETCH_USERS = 'USERS/FETCH_USERS';
+export const SET_USER_ID = 'USERS/SET_USER_ID';
+export const FETCH_USER_POSTS = 'POSTS/FETCH_USER_POSTS';
+export const SET_USER_POST = 'POSTS/SET_USER_POST';
