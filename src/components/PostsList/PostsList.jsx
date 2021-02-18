@@ -35,20 +35,22 @@ const PostsList = () => {
         <tbody className="table-light">
           {
             posts.map(post => (
-              <tr key={post.id}>
+              <tr className="table-row" key={post.id}>
                 <th scope="row">{post.id}</th>
                 <td>{post.title}</td>
                 <td>{post.body}</td>
-                <button
-                  type="button"
-                  className="btn btn-info"
-                  onClick={() => {
-                    dispatch(selectPost(post));
-                    history.push('/posts/details');
-                  }}
-                >
-                  Details
-                </button>
+                <td>
+                  <button
+                    type="button"
+                    className="btn btn-info"
+                    onClick={() => {
+                      dispatch(selectPost(post));
+                      history.push('/posts/details');
+                    }}
+                  >
+                    Details
+                  </button>
+                </td>
               </tr>
             ))
           }

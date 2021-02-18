@@ -44,16 +44,18 @@ const UsersList = () => {
                 {' '}
                 {user.address.street}
               </td>
-              <button
-                type="button"
-                className="btn btn-info"
-                onClick={() => {
-                  dispatch(setUserId(user.id));
-                  history.push('/posts');
-                }}
-              >
-                Posts
-              </button>
+              <td>
+                <button
+                  type="button"
+                  className="btn btn-info"
+                  onClick={() => {
+                    dispatch(setUserId(user.id));
+                    history.push('/posts');
+                  }}
+                >
+                  Posts
+                </button>
+              </td>
             </tr>
           ))
         }
