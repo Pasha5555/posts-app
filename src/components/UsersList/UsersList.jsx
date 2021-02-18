@@ -1,22 +1,20 @@
 import React, { useEffect } from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { fetchUsers, setUserId } from '../../store/actions';
-
 
 const UsersList = () => {
   const dispatch = useDispatch();
   const users = useSelector(state => state.users.users);
-  const history = useHistory()
+  const history = useHistory();
 
-  useEffect(()=>{
-    dispatch(fetchUsers())
-  }, [])
-
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
 
   return (
-    users &&
-    
+    users
+    && (
     <table className="table">
       <thead className="table-primary">
         <tr>
@@ -40,13 +38,18 @@ const UsersList = () => {
               <td>{user.email}</td>
               <td>{user.phone}</td>
               <td>{user.website}</td>
-              <td>{user.address.city}, {user.address.street}</td>
-              <button 
-                type="button" 
+              <td>
+                {user.address.city}
+                ,
+                {' '}
+                {user.address.street}
+              </td>
+              <button
+                type="button"
                 className="btn btn-info"
-                onClick={()=> {
-                  dispatch(setUserId(user.id))
-                  history.push('/posts')
+                onClick={() => {
+                  dispatch(setUserId(user.id));
+                  history.push('/posts');
                 }}
               >
                 Posts
@@ -56,12 +59,8 @@ const UsersList = () => {
         }
       </tbody>
     </table>
-  )
-}
-
-// const mapStateToProps = state => ({
-//   userId: state.users.userId,
-// })
+    )
+  );
+};
 
 export default UsersList;
-

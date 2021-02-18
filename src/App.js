@@ -1,18 +1,15 @@
 import React from 'react';
 import {
   HashRouter,
-  Link,
   Switch,
   Route,
-} from 'react-router-dom'
+} from 'react-router-dom';
 
 import UsersList from './components/UsersList/UsersList';
 import PostsList from './components/PostsList/PostsList';
 import PostDetail from './components/PostDetails/PostDetails';
 
 function App() {
-
-
   return (
     <HashRouter>
       <div className="App">

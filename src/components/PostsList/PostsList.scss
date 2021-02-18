@@ -1,0 +1,26 @@
+@import '../CommonStyles/mixins.scss';
+
+.modal {
+  &-dialog {
+    @include alertPosition(200px);
+    z-index: 100;
+  }
+
+  &-create {
+    @include modalWindow();
+  }
+}
+
+.btn {
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin: auto;
+}
+
+.alert {
+  @include alertPosition(0);
+  width: 500px;
+  text-align: center;
+  margin: auto;
+}
