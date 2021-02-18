@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/PostsList/PostList.css"],"names":[],"mappings":"AAAA,cACE,iBAAkB,CAClB,KAAM,CACN,OAAQ,CACR,MAAO,CACP,WACF","file":"main.3f3d119c.chunk.css","sourcesContent":[".modal-dialog {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 100;\n}"]}
