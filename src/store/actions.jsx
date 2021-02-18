@@ -1,30 +1,54 @@
-import { getUsers, getUserPosts } from '../api/users';
-import { ADD_NEW_POST, FETCH_USERS, FETCH_USER_POSTS, SET_USER_ID, SET_USER_POST } from './types';
+import { getUsers, getUserPosts, getPostComments } from '../api/api';
+import {
+  FETCH_POST_COMMENTS,
+  FETCH_USERS,
+  FETCH_USER_POSTS,
+  SET_USER_ID,
+  SET_USER_POST,
+  SHOW_MESSAGE,
+  SHOW_MODAL_CREATE,
+  SHOW_MODAL_EDIT,
+} from './types';
 
-export const fetchUsers = () => {
-  return async dispatch => {
-    const users = await getUsers();
+export const fetchUsers = () => async(dispatch) => {
+  const users = await getUsers();
 
-    dispatch({ type: FETCH_USERS, payload: users })
-  }
-}
+  dispatch({ type: FETCH_USERS, payload: users });
+};
 
-export const setUserId = (userId) => ({
+export const setUserId = userId => ({
   type: SET_USER_ID,
   payload: userId,
-})
+});
 
-export const fetchUserPosts = (userId) => {
-  return async dispatch => {
-    const userPosts = await getUserPosts(userId);
+export const fetchUserPosts = userId => async(dispatch) => {
+  const userPosts = await getUserPosts(userId);
 
-    dispatch({ type: FETCH_USER_POSTS, payload: userPosts })
-  }
-}
+  dispatch({ type: FETCH_USER_POSTS, payload: userPosts });
+};
 
-export const selectPost = (postId) => {
-  return {
-    type: SET_USER_POST,
-    payload: postId,
-  }
-}
+export const selectPost = selectedPost => ({
+  type: SET_USER_POST,
+  payload: selectedPost,
+});
+
+export const fetchPostComments = postId => async(dispatch) => {
+  const postComments = await getPostComments(postId);
+
+  dispatch({ type: FETCH_POST_COMMENTS, payload: postComments });
+};
+
+export const showMessage = status => ({
+  type: SHOW_MESSAGE,
+  payload: status,
+});
+
+export const showModalCreate = status => ({
+  type: SHOW_MODAL_CREATE,
+  payload: status,
+});
+
+export const showModalEdit = status => ({
+  type: SHOW_MODAL_EDIT,
+  payload: status,
+});

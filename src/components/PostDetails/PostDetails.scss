@@ -1,0 +1,42 @@
+@import '../CommonStyles/mixins.scss';
+
+.list-group {
+  width: 600px;
+  margin: auto;
+
+  &-item {
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+  }
+}
+
+.item {
+  &-name {
+    width: 400px;
+  }
+
+  &-email {
+    display: block;
+    color: rgb(226, 206, 206);
+    margin-bottom: 20px;
+    margin-top: -5px;
+    text-decoration: underline;
+  }
+}
+
+.card {
+  width: 700px;
+  margin: auto;
+  padding: 10px;
+
+  &-buttons {
+    display: flex;
+    width: 300px;
+    margin: auto;
+  }
+}
+
+.modal-edit {
+  @include modalWindow();
+}
